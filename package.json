@@ -1,11 +1,12 @@
 {
   "name": "a2a-example",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/server/server.ts"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.5.0",
     "hono": "^4.7.9",
+    "logging": "^3.3.0",
     "zod": "^3.24.4"
   },
   "devDependencies": {

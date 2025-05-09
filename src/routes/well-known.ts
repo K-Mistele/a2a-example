@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import type { AgentCard } from '../types/AgentCard';
+import type { AgentCard } from '../schema';
 
 const wellKnown = new Hono();
 
