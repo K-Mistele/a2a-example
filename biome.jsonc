@@ -1,0 +1,71 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineEnding": "lf",
+        "lineWidth": 120,
+        "attributePosition": "auto"
+    },
+    "organizeImports": {
+        "enabled": true
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "style": {
+                "noInferrableTypes": "off",
+                "noNonNullAssertion": "off",
+                "noUnusedTemplateLiteral": "off"
+            },
+            "suspicious": {
+                "noExplicitAny": "off",
+                "noArrayIndexKey": "off",
+                "useValidTypeof": "off"
+            },
+            "correctness": {
+                "useExhaustiveDependencies": "off"
+            },
+            "complexity": {
+                "noUselessFragments": "off"
+            },
+            "a11y": {
+                "noSvgWithoutTitle": "off",
+                "useFocusableInteractive": "off",
+                "useKeyWithClickEvents": "off",
+                "useSemanticElements": "off"
+            }
+        }
+    },
+    "javascript": {
+        "formatter": {
+            "arrowParentheses": "always",
+            "bracketSameLine": false,
+            "bracketSpacing": true,
+            "jsxQuoteStyle": "single",
+            "quoteProperties": "asNeeded",
+            "semicolons": "asNeeded",
+            "trailingCommas": "all",
+            "quoteStyle": "single"
+        }
+    },
+    "files": {
+        "include": [
+            "packages/**/*.ts",
+            "packages/**/*.tsx",
+            "services/**/*.ts",
+            "services/**/*.tsx"
+        ], // Ensure this matches the files you want to format
+        "ignore": [
+            "node_modules/*",
+            "**/node_modules/*",
+            ".env",
+            ".env.*",
+            "bun.lockb",
+            ".next",
+            "**/.next/**"
+        ]
+    }
+}
