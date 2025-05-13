@@ -72,3 +72,42 @@ export function applyUpdateToTaskAndHistory(
 
     return { task: newTask, history: newHistory }
 }
+
+export function createTaskStatusEvent(
+    taskId: string,
+    status: Schema.TaskStatus,
+    final: boolean,
+): Schema.TaskStatusUpdateEvent {
+    return {
+        id: taskId,
+        status: status, // Assumes status already has timestamp from applyUpdate
+        final: final,
+    }
+}
+
+export function createTaskFailureStatusUpdate(error: any): Omit<Schema.TaskStatus, 'timestamp'> {
+    return {
+        state: 'failed',
+        message: {
+            role: 'agent',
+            parts: [
+                {
+                    type: 'text',
+                    text: `Handler failed: ${error instanceof Error ? error.message : String(error)}`,
+                },
+            ],
+        },
+    }
+}
+
+export function createTaskArtifactEvent(
+    taskId: string,
+    artifact: Schema.Artifact,
+    final: boolean,
+): Schema.TaskArtifactUpdateEvent {
+    return {
+        id: taskId,
+        artifact: artifact,
+        final: final, // Usually false unless it's the very last thing
+    }
+}
