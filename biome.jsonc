@@ -18,7 +18,8 @@
             "style": {
                 "noInferrableTypes": "off",
                 "noNonNullAssertion": "off",
-                "noUnusedTemplateLiteral": "off"
+                "noUnusedTemplateLiteral": "off",
+                "noUselessElse": "off"
             },
             "suspicious": {
                 "noExplicitAny": "off",
@@ -37,7 +38,7 @@
                 "useKeyWithClickEvents": "off",
                 "useSemanticElements": "off"
             }
-        }
+        },
     },
     "javascript": {
         "formatter": {
@@ -53,10 +54,8 @@
     },
     "files": {
         "include": [
-            "packages/**/*.ts",
-            "packages/**/*.tsx",
-            "services/**/*.ts",
-            "services/**/*.tsx"
+            "src/**/*.ts",
+            "src/**/*.tsx"
         ], // Ensure this matches the files you want to format
         "ignore": [
             "node_modules/*",
